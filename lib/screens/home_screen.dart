@@ -62,24 +62,20 @@ class HomeScreen extends StatelessWidget {
     return Stack(
       children: [
         Positioned.fill(
-          child: ClipRRect(
-            borderRadius: radius,
-            child: Expanded(
-              child: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [
-                      Color(0xFF1C1C44),
-                      Color(0xFF222248),
-                      Color(0xFF27274E),
-                      Color(0xFF2B2B50),
-                      Color(0xFF2E2E55),
-                      Color(0xFF323259),
-                    ],
-                  ),
-                ),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: radius,
+              gradient: const LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  Color(0xFF1C1C44),
+                  Color(0xFF222248),
+                  Color(0xFF27274E),
+                  Color(0xFF2B2B50),
+                  Color(0xFF2E2E55),
+                  Color(0xFF323259),
+                ],
               ),
             ),
           ),
@@ -183,9 +179,7 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               controller.data == null
                                   ? '0'
-                                  : controller.data!.current.tempC!
-                                      .toInt()
-                                      .toString(),
+                                  : controller.data!.current.tempC!.toString(),
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 50,
@@ -275,7 +269,9 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
+                  SizedBox(
+                    width: 130,
+                    height: 130,
                     child: Image.asset('assets/images/day/113.png'),
                   ),
                 ],
